@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+        async function sendReq() {
+            try {
+                let resp = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+                let json = await resp.json()
+                webkit.messageHandlers.callbackHandler.postMessage(json)
+            } catch (e) {
+                webkit.messageHandlers.callbackHandler.postMessage(e)
+            }
+        }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
